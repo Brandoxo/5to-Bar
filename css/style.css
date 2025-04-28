@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Montserrat:wght@400;600;700&display=swap");
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.logo-font {
+  font-family: "Permanent Marker", cursive;
+}
+
+.glow {
+  text-shadow: 0 0 5px #e11d48, 0 0 10px #e11d48;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Efecto de guitarra */
+.guitar-string {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f5f5f5, transparent);
+}
+
+.guitar-string::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #e11d48;
+  border-radius: 50%;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #e11d48;
+}
+
+/* Fondo de amplificador */
+.amp-bg {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://cdnjs.cloudflare.com/ajax/libs/background-patterns/latest/images/noise-texture.png");
+  background-blend-mode: overlay;
+}
+
+/* Menú con aspecto de vinilo */
+.vinyl-menu {
+  border: 1px solid #333;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.vinyl-menu::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  top: 40%;
+  left: 40%;
+  z-index: 1;
+}
+
+.vinyl-menu::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  border: 1px solid #333;
+  top: 20%;
+  left: 20%;
+}
+
+/* Efecto hover para botones */
+.rock-btn {
+  transition: all 0.2s ease;
+}
+
+.rock-btn:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.rock-btn:active {
+  transform: scale(0.98);
+}
